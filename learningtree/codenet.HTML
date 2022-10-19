@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ul{
+  list-style-type:none;
+  margin:0;
+  padding: 0;
+  width:200px;
+  background-color: #f1f1f1;
+
+}
+
+li a{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+
+}
+/*change the  link color on hover*/
+li a:hover{
+  background-color: #555;
+  color: white;
+
+}
+
+h2{
+float:right;
+
+}
+
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+<body>
+
+
+
+<h2>
+
+<img src="tree.jpg" alt="brand log" width="200px" height="160px">
+
+</h2>
+
+<ul>
+   <li><a href="home">Home</a></li>
+   <li><a href="news">News</a></li>
+   <li><a href="Contact">Contact</a></li> 
+</ul>
+
+<p>Welcome!</p>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="coding1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="coding3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="coding2.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+
+<script>
+let slideIndex = [1,1];
+let slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+<center>
+
+<p>Coding develops problem-solving skills
+Through coding, children learn to quickly fix and try again in different ways when something doesn't work out.
+ Coding also equips kids with the ability to stick with a problem and work on finding a solution.
+ This problem-solving technique is transferable to a lot of other fields</p>
+
+<button class="button">Register</button><br><br>
+
+
+<footer>&copy; Copyright 2022 Learning Tree Academy </footer>
+
+</center>
+</body>
+</html>
